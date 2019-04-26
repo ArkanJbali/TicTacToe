@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/j"
+    >
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/header"
+    android:textSize="40dp"
+    android:textAlignment="center"
+    android:textColor="@color/whiteBTN"
+    android:textStyle="bold"
+    android:fontFamily="serif-monospace"
+    android:layout_marginTop="40dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        android:textColor="@color/whiteBTN"
+        android:textStyle="bold"
+        android:fontFamily="serif-monospace"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@id/oneplayer"/>
+<Button
+    android:id="@+id/oneplayer"
+    android:layout_centerInParent="true"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:text="@string/withComputer"
+    android:padding="20dp"
+    android:background="@drawable/buttons_main"
+    android:textColor="@color/whiteBTN"
+    android:textSize="20sp"/>
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/oneplayer"
+        android:id="@+id/twoplayer"
+        android:layout_centerInParent="true"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/withFriend"
+        android:padding="20dp"
+        android:background="@drawable/buttons_main"
+        android:textColor="@color/whiteBTN"
+        android:textSize="20sp"/>
+</RelativeLayout>

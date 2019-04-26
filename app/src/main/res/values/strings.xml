@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="withFriend">Play with a Friend</string>
+    <string name="withComputer">Play with Computer</string>
+    <string name="header">Tic Tac Toe</string>
+    <string name="welcome">Welcome, Lets Start</string>
+    <string name="plone">First Player</string>
+    <string name="pltwo">Second Player</string>
+    <string name="start">Start</string>
+    <string name="clear">Clear</string>
+    <string name="score">Score</string>
+    <string name="quite">Quite</string>
+    <string name="scoreboard">Score Board</string>
+    <string name="winning">Winning</string>
+    <string name="losing">Losing</string>
+    <string name="goHome">Go Back</string>
+    <string name="DemoPlayer">Arkan Jbali</string>
+</resources>
