@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rowCount="1"
-        android:columnCount="3"
+        android:columnCount="4"
         android:layout_marginTop="50dp">
         <ImageView
             android:layout_marginLeft="20dp"
@@ -20,7 +20,7 @@
             android:id="@+id/imgTurn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="50dp"
             android:background="@drawable/x"/>
         <TextView
             android:layout_width="wrap_content"
@@ -32,6 +32,13 @@
             android:textStyle="bold"
             android:layout_marginLeft="15dp"
             android:fontFamily="serif-monospace"
+            />
+        <ImageView
+            android:layout_marginLeft="50dp"
+            android:id="@+id/newGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/reset"
             />
     </GridLayout>
     <GridLayout
@@ -45,63 +52,63 @@
         android:layout_below="@+id/firstLY"
         android:background="@drawable/matrix_style">
         <ImageButton
-            android:id="@+id/one"
+            android:id="@+id/btn_1"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
             android:src="@drawable/d"
             android:onClick="onClickMatrix"/>
         <ImageButton
-            android:id="@+id/two"
+            android:id="@+id/btn_2"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
             android:src="@drawable/d"
             android:onClick="onClickMatrix"/>
         <ImageButton
-            android:id="@+id/three"
+            android:id="@+id/btn_3"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
             android:src="@drawable/d"
             android:onClick="onClickMatrix"/>
         <ImageButton
-            android:id="@+id/four"
+            android:id="@+id/btn_4"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
             android:src="@drawable/d"
             android:onClick="onClickMatrix"/>
         <ImageButton
-            android:id="@+id/five"
+            android:id="@+id/btn_5"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
             android:src="@drawable/d"
             android:onClick="onClickMatrix"/>
         <ImageButton
-            android:id="@+id/six"
+            android:id="@+id/btn_6"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
             android:src="@drawable/d"
             android:onClick="onClickMatrix"/>
         <ImageButton
-            android:id="@+id/seven"
+            android:id="@+id/btn_7"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
             android:src="@drawable/d"
             android:onClick="onClickMatrix"/>
         <ImageButton
-            android:id="@+id/eight"
+            android:id="@+id/btn_8"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
             android:src="@drawable/d"
             android:onClick="onClickMatrix"/>
         <ImageButton
-            android:id="@+id/nine"
+            android:id="@+id/btn_9"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
@@ -168,27 +175,30 @@
             android:textAlignment="center"
             />
         <TextView
+            android:id="@+id/XWins"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="10"
+            android:text="0"
             android:textSize="25dp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/whiteBTN"
             android:textAlignment="center"
             />
         <TextView
+            android:id="@+id/OWins"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="5"
+            android:text="0"
             android:textSize="25dp"
             android:layout_marginLeft="50dp"
             android:textColor="@color/whiteBTN"
             android:textAlignment="center"
             />
         <TextView
+            android:id="@+id/DrawNo"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="8"
+            android:text="0"
             android:textSize="25dp"
             android:layout_marginLeft="55dp"
             android:textColor="@color/whiteBTN"

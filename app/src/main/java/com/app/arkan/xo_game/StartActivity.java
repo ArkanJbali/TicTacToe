@@ -39,4 +39,20 @@ public class StartActivity extends Activity {
             }
         }
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("FirstPlayer",getIntent().getStringExtra("firstPlayer"));
+        outState.putString("SecondPlayer",getIntent().getStringExtra("secondPlayer"));
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        TextView firstPlayerName = findViewById(R.id.firstPlayerName);
+        firstPlayerName.setText(savedInstanceState.getString("FirstPlayer"));
+        TextView secondPlayerName = findViewById(R.id.secondPlayerName);
+        secondPlayerName.setText(savedInstanceState.getString("SecondPlayer"));
+    }
 }
