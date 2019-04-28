@@ -1,13 +1,14 @@
 package com.app.arkan.xo_game;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Players {
-    private Date date;
+public class Players implements Serializable {
+    private String date;
     private String firstPlayer_name,secondPlayer_name;
     private int firstPlayer_wins,firstPlayer_losses,secondPlayer_wins,secondPlayer_losses;
 
-    Players(Date date, String firstPlayer_name, String secondPlayer_name, int firstPlayer_wins, int firstPlayer_losses, int secondPlayer_wins,
+    Players(String date, String firstPlayer_name, String secondPlayer_name, int firstPlayer_wins, int firstPlayer_losses, int secondPlayer_wins,
             int secondPlayer_losses){
         this.date=date;
         this.firstPlayer_name=firstPlayer_name;
@@ -18,11 +19,11 @@ public class Players {
         this.secondPlayer_losses=secondPlayer_losses;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

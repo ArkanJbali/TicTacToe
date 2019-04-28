@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#39273C</color>
     <color name="colorPrimaryDark">#39273C</color>
-    <color name="colorAccent">#90FD75EF</color>
+    <color name="colorAccent">#90B4009D</color>
     <color name="whiteBTN">#FFFFFF</color>
     <color name="YellowBTN">#FF9800</color>
 </resources>

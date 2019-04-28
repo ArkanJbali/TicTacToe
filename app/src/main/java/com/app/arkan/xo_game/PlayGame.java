@@ -14,6 +14,12 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class PlayGame extends Activity {
     int playerMode = 0; // firstPlayer=0 & secondPlayer=1
     int matrixFlag[][]  = { {0,0,0},
@@ -27,10 +33,19 @@ public class PlayGame extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_activity);
         ImageView returnBTN = findViewById(R.id.goBack);
+
         returnBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PlayGame.this,StartActivity.class));
+                Intent i = new Intent(PlayGame.this,StartActivity.class);
+                i.putExtra("firstPlayer",getIntent().getStringExtra("firstPlayer"));
+                i.putExtra("secondPlayer",getIntent().getStringExtra("secondPlayer"));
+                Players players = new Players(getCurrentTimeUsingCalendar(),getIntent().getStringExtra("firstPlayer"),
+                        getIntent().getStringExtra("secondPlayer"),XWins,OWins,OWins,XWins);
+                i.putExtra("PlayersObject", players);
+                StartActivity.ACTIVITY_CODE=2;
+                startActivity(i);
+
             }
         });
         turn = findViewById(R.id.imgTurn);
@@ -39,7 +54,7 @@ public class PlayGame extends Activity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Restarting The Game",Toast.LENGTH_LONG).show();
-                NewGame();
+                RestartGame();
             }
         });
     }
@@ -225,6 +240,32 @@ public class PlayGame extends Activity {
                 GameEnded();
             }
     }
+    public void RestartGame(){
+            playerMode = 0;
+            counter=0;
+            Winner='D';
+            XWins=OWins=DRAW=0;
+            TextView xwins = findViewById(R.id.XWins);
+            xwins.setText(XWins+"");
+            TextView owins = findViewById(R.id.OWins);
+            owins.setText(OWins+"");
+            TextView draw = findViewById(R.id.DrawNo);
+            draw.setText(DRAW+"");
+            turn.setBackgroundResource(R.drawable.x);
+            for (int i = 0; i < matrixFlag.length; ++i) {
+                for (int j = 0; j < matrixFlag[i].length; ++j) {
+                    matrixFlag[i][j]=0;
+                }
+            }
+            ImageButton buttons [] = new ImageButton[9];
+            for (int i = 0; i <9; i++) {
+                String buttonID = "btn_" + (i+1);
+                int id = getResources().getIdentifier(buttonID, "id", getPackageName());
+                //Log.d("Mat",id+""+i);
+                buttons[i] =  (ImageButton)findViewById(id);
+                buttons[i].setBackgroundResource(R.drawable.null_back);
+            }
+    }
     public void NewGame(){
         playerMode = 0;
         counter=0;
@@ -319,5 +360,12 @@ public class PlayGame extends Activity {
         Winner = 'D';
         return false;
     }
-
+    public static String getCurrentTimeUsingCalendar() {
+        Calendar cal = Calendar.getInstance();
+        Date date=cal.getTime();
+        DateFormat dateFormat = new SimpleDateFormat("dd/M/yy HH:mm");
+        String formattedDate=dateFormat.format(date);
+       // System.out.println("Current time of the day using Calendar - 24 hour format: "+ formattedDate);
+        return formattedDate;
+    }
 }
