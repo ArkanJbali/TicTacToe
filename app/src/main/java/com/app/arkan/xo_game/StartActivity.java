@@ -25,6 +25,7 @@ import java.util.Date;
 import android.util.Log;
 public class StartActivity extends Activity {
 static int ACTIVITY_CODE = 1;
+static int ACTIVITY_SCORE = 1;
     final Context c = this;
     String lastGameScore [];
     @Override

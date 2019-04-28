@@ -40,8 +40,10 @@ public class MainActivity extends AppCompatActivity {
                                     // userInputDialogEditText.setError("Fill it");
                                     Toast.makeText(getApplicationContext(),"Error, Please fill all the fields !!",Toast.LENGTH_LONG).show();
                                 }else {
+                                    String name = userInputDialogEditText.getText().toString();
+                                    name = name.substring(0,name.indexOf(" "));
                                     Intent i = new Intent(MainActivity.this, StartActivity.class);
-                                    i.putExtra("firstPlayer", userInputDialogEditText.getText().toString()); //input from dialog
+                                    i.putExtra("firstPlayer", name); //input from dialog
                                     i.putExtra("secondPlayer", "Computer");
                                     startActivity(i);
                                 }
@@ -82,9 +84,13 @@ public class MainActivity extends AppCompatActivity {
                                     // firstUserInputDialogEditText.setError("Fill it");
                                     Toast.makeText(getApplicationContext(),"Error, Please fill all the fields !!",Toast.LENGTH_LONG).show();
                                 }else {
+                                    String name1 = firstUserInputDialogEditText.getText().toString();
+                                    name1 = name1.substring(0,name1.indexOf(" "));
+                                    String name2 = secondUserInputDialogEditText.getText().toString();
+                                    name2 = name2.substring(0,name2.indexOf(" "));
                                     Intent i = new Intent(MainActivity.this, StartActivity.class);
-                                    i.putExtra("firstPlayer", firstUserInputDialogEditText.getText().toString()); //input from dialog
-                                    i.putExtra("secondPlayer", secondUserInputDialogEditText.getText().toString());
+                                    i.putExtra("firstPlayer", name1); //input from dialog
+                                    i.putExtra("secondPlayer", name2);
                                     startActivity(i);
                                 }
                             }

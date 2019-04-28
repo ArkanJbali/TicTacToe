@@ -27,21 +27,23 @@ public class Score extends Activity {
     }
     //add if not null
     public void showLastGameScore(){
+        String gameScore[] = getIntent().getStringArrayExtra("lastGameScore");
         TextView fp = findViewById(R.id.pone);
         fp.setText(getIntent().getStringExtra("firstPlayer"));
         TextView sp = findViewById(R.id.ptwo);
         sp.setText(getIntent().getStringExtra("secondPlayer"));
-        String gameScore [] = getIntent().getStringArrayExtra("lastGameScore");
-        Log.d("CODEEEEE",gameScore[0]);
-        TextView date = findViewById(R.id.date);
-        date.setText(gameScore[0]+" "+gameScore[1]);
-        TextView xwin = findViewById(R.id.xwin);
-        xwin.setText(gameScore[3]);
-        TextView xloss = findViewById(R.id.xloss);
-        xloss.setText(gameScore[4]);
-        TextView owin = findViewById(R.id.owin);
-        owin.setText(gameScore[6]);
-        TextView oloss = findViewById(R.id.oloss);
-        oloss.setText(gameScore[7]);
+        Log.d("CODEEEEE", gameScore[0]);
+        if(!gameScore[0].equals("")) {
+            TextView date = findViewById(R.id.date);
+            date.setText(gameScore[0] + " " + gameScore[1]);
+            TextView xwin = findViewById(R.id.xwin);
+            xwin.setText(gameScore[3]);
+            TextView xloss = findViewById(R.id.xloss);
+            xloss.setText(gameScore[4]);
+            TextView owin = findViewById(R.id.owin);
+            owin.setText(gameScore[6]);
+            TextView oloss = findViewById(R.id.oloss);
+            oloss.setText(gameScore[7]);
+        }
     }
 }
