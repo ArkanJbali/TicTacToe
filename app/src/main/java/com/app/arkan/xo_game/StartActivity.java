@@ -21,11 +21,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.Date;
 import android.util.Log;
 public class StartActivity extends Activity {
 static int ACTIVITY_CODE = 1;
 static int ACTIVITY_SCORE = 1;
+static int TOTAL_ROWS = 0;
+static ArrayList<String> lines = new ArrayList<>();
     final Context c = this;
     String lastGameScore [];
     @Override
@@ -148,6 +151,9 @@ static int ACTIVITY_SCORE = 1;
             String text;
             while ((text = br.readLine()) != null)
             {
+                lines.add(text);
+                Log.d("CODEEEEE",text+"\nInside StartActivity ShowScores\n");
+                TOTAL_ROWS++;
                 lastLine = text;
             }
              lastGameScore = lastLine.split(" ");
@@ -167,7 +173,5 @@ static int ACTIVITY_SCORE = 1;
         }
         ACTIVITY_SCORE=2;
     }
-    public void showHistoryScores(){
 
-    }
 }

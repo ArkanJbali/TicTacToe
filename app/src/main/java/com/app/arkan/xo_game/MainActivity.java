@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(),"Error, Please fill all the fields !!",Toast.LENGTH_LONG).show();
                                 }else {
                                     String name = userInputDialogEditText.getText().toString();
+                                    if(name.contains(" "))
                                     name = name.substring(0,name.indexOf(" "));
                                     Intent i = new Intent(MainActivity.this, StartActivity.class);
                                     i.putExtra("firstPlayer", name); //input from dialog

@@ -31,6 +31,7 @@ public class Score extends Activity {
                 Intent i = new Intent(Score.this,History_ScoreList.class);
                 i.putExtra("firstPlayer",getIntent().getStringExtra("firstPlayer"));
                 i.putExtra("secondPlayer",getIntent().getStringExtra("secondPlayer"));
+                i.putExtra("lastGameScore",getIntent().getStringArrayExtra("lastGameScore"));
                 startActivity(i);
             }
         });
@@ -42,9 +43,11 @@ public class Score extends Activity {
         TextView sp = findViewById(R.id.ptwo);
         sp.setText(getIntent().getStringExtra("secondPlayer"));
         if(StartActivity.ACTIVITY_SCORE==2) {
-        String gameScore[] = getIntent().getStringArrayExtra("lastGameScore");
+            String[] gameScore = getIntent().getStringArrayExtra("lastGameScore");
 
        Log.d("CODEEEEE", gameScore[0]);
+
+//add players name
 
             TextView date = findViewById(R.id.date);
             date.setText(gameScore[0] + " " + gameScore[1]);
