@@ -50,10 +50,18 @@ static ArrayList<String> lines = new ArrayList<>();
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.start: {
-                Intent i = new Intent(StartActivity.this, PlayGame.class);
-                i.putExtra("firstPlayer", getIntent().getStringExtra("firstPlayer"));
-                i.putExtra("secondPlayer", getIntent().getStringExtra("secondPlayer"));
-                startActivity(i);
+                if(MainActivity.isComputer == 0) {
+                    Intent i = new Intent(StartActivity.this, PlayGame.class);
+                    i.putExtra("firstPlayer", getIntent().getStringExtra("firstPlayer"));
+                    i.putExtra("secondPlayer", getIntent().getStringExtra("secondPlayer"));
+                    startActivity(i);
+                }
+                if(MainActivity.isComputer == 1) {
+                    Intent i = new Intent(StartActivity.this, PlayWithComputer.class);
+                    i.putExtra("firstPlayer", getIntent().getStringExtra("firstPlayer"));
+                    i.putExtra("secondPlayer", getIntent().getStringExtra("secondPlayer"));
+                    startActivity(i);
+                }
                 break;
             }
             case R.id.score: {

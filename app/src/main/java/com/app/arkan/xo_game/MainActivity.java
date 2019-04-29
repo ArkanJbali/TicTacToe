@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     final Context c = this;
+    static int isComputer = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                                     Intent i = new Intent(MainActivity.this, StartActivity.class);
                                     i.putExtra("firstPlayer", name); //input from dialog
                                     i.putExtra("secondPlayer", "Computer");
+                                    isComputer = 1;
                                     startActivity(i);
                                 }
                             }
@@ -86,8 +88,10 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(),"Error, Please fill all the fields !!",Toast.LENGTH_LONG).show();
                                 }else {
                                     String name1 = firstUserInputDialogEditText.getText().toString();
+                                    if(name1.contains(" "))
                                     name1 = name1.substring(0,name1.indexOf(" "));
                                     String name2 = secondUserInputDialogEditText.getText().toString();
+                                    if(name2.contains(" "))
                                     name2 = name2.substring(0,name2.indexOf(" "));
                                     Intent i = new Intent(MainActivity.this, StartActivity.class);
                                     i.putExtra("firstPlayer", name1); //input from dialog
