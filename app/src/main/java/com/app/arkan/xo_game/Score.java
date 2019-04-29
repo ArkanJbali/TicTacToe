@@ -24,16 +24,28 @@ public class Score extends Activity {
                 startActivity(i);
             }
         });
+        Button history = findViewById(R.id.history);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Score.this,History_ScoreList.class);
+                i.putExtra("firstPlayer",getIntent().getStringExtra("firstPlayer"));
+                i.putExtra("secondPlayer",getIntent().getStringExtra("secondPlayer"));
+                startActivity(i);
+            }
+        });
     }
     //add if not null
     public void showLastGameScore(){
-        String gameScore[] = getIntent().getStringArrayExtra("lastGameScore");
         TextView fp = findViewById(R.id.pone);
         fp.setText(getIntent().getStringExtra("firstPlayer"));
         TextView sp = findViewById(R.id.ptwo);
         sp.setText(getIntent().getStringExtra("secondPlayer"));
-        Log.d("CODEEEEE", gameScore[0]);
-        if(!gameScore[0].equals("")) {
+        if(StartActivity.ACTIVITY_SCORE==2) {
+        String gameScore[] = getIntent().getStringArrayExtra("lastGameScore");
+
+       Log.d("CODEEEEE", gameScore[0]);
+
             TextView date = findViewById(R.id.date);
             date.setText(gameScore[0] + " " + gameScore[1]);
             TextView xwin = findViewById(R.id.xwin);
@@ -44,6 +56,7 @@ public class Score extends Activity {
             owin.setText(gameScore[6]);
             TextView oloss = findViewById(R.id.oloss);
             oloss.setText(gameScore[7]);
+            StartActivity.ACTIVITY_SCORE=1;
         }
     }
 }

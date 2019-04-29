@@ -165,6 +165,7 @@ static int ACTIVITY_SCORE = 1;
                 e.printStackTrace();
             }
         }
+        ACTIVITY_SCORE=2;
     }
     public void showHistoryScores(){
 

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_style"
+    >
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/scoreboard"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        android:textColor="@color/whiteBTN"
+        android:textStyle="bold"
+        android:fontFamily="serif-monospace"
+        android:layout_marginTop="40dp"/>
+    <TextView
+        android:id="@+id/header2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:layout_below="@id/header"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/whiteBTN"
+        android:textStyle="bold"
+        android:fontFamily="serif-monospace"
+        />
+    <GridView
+        android:layout_height="wrap_content"
+        android:id="@+id/gridView1"
+        android:layout_width="match_parent"
+        android:numColumns="5">
+
+    </GridView>
+    <Button
+        android:layout_marginTop="40dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/goBack"
+        android:background="@drawable/buttons_main"
+        android:textColor="@color/whiteBTN"
+        android:text="@string/goHome"
+        android:textSize="20dp"
+        android:layout_gravity="bottom|center"
+        />
+</LinearLayout>
