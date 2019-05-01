@@ -56,63 +56,63 @@
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
-            android:src="@drawable/d"
+            android:src="@drawable/null_back"
             android:onClick="onClickMatrix"/>
         <ImageButton
             android:id="@+id/btn_2"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
-            android:src="@drawable/d"
+            android:src="@drawable/null_back"
             android:onClick="onClickMatrix"/>
         <ImageButton
             android:id="@+id/btn_3"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
-            android:src="@drawable/d"
+            android:src="@drawable/null_back"
             android:onClick="onClickMatrix"/>
         <ImageButton
             android:id="@+id/btn_4"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
-            android:src="@drawable/d"
+            android:src="@drawable/null_back"
             android:onClick="onClickMatrix"/>
         <ImageButton
             android:id="@+id/btn_5"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
-            android:src="@drawable/d"
+            android:src="@drawable/null_back"
             android:onClick="onClickMatrix"/>
         <ImageButton
             android:id="@+id/btn_6"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
-            android:src="@drawable/d"
+            android:src="@drawable/null_back"
             android:onClick="onClickMatrix"/>
         <ImageButton
             android:id="@+id/btn_7"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
-            android:src="@drawable/d"
+            android:src="@drawable/null_back"
             android:onClick="onClickMatrix"/>
         <ImageButton
             android:id="@+id/btn_8"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
-            android:src="@drawable/d"
+            android:src="@drawable/null_back"
             android:onClick="onClickMatrix"/>
         <ImageButton
             android:id="@+id/btn_9"
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/matrix_style"
-            android:src="@drawable/d"
+            android:src="@drawable/null_back"
             android:onClick="onClickMatrix"/>
     </GridLayout>
     <GridLayout

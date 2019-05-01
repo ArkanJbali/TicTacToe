@@ -5,31 +5,24 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.Date;
 import android.util.Log;
 public class StartActivity extends Activity {
 static int ACTIVITY_CODE = 1;
 static int ACTIVITY_SCORE = 1;
 static int TOTAL_ROWS = 0;
 static ArrayList<String> lines = new ArrayList<>();
-    final Context c = this;
+   // final Context c = this;
     String lastGameScore [];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +53,7 @@ static ArrayList<String> lines = new ArrayList<>();
                     Intent i = new Intent(StartActivity.this, PlayWithComputer.class);
                     i.putExtra("firstPlayer", getIntent().getStringExtra("firstPlayer"));
                     i.putExtra("secondPlayer", getIntent().getStringExtra("secondPlayer"));
+                    MainActivity.isComputer = 0;
                     startActivity(i);
                 }
                 break;

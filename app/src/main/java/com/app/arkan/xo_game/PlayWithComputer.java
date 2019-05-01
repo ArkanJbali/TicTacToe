@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
@@ -78,7 +79,6 @@ public class PlayWithComputer extends Activity {
                             turn.setBackgroundResource(R.drawable.o);
                             playerMode = 1;
                             matrixFlag[0][0] = 1;
-                        } else {
                             ComputerTurn();
                         }
                     }
@@ -95,7 +95,7 @@ public class PlayWithComputer extends Activity {
                             turn.setBackgroundResource(R.drawable.o);
                             playerMode = 1;
                             matrixFlag[0][1] = 1;
-                        } else {
+
                             ComputerTurn();
                         }
                     }
@@ -112,7 +112,7 @@ public class PlayWithComputer extends Activity {
                             turn.setBackgroundResource(R.drawable.o);
                             playerMode = 1;
                             matrixFlag[0][2] = 1;
-                        } else {
+
                             ComputerTurn();
                         }
                     }
@@ -129,7 +129,7 @@ public class PlayWithComputer extends Activity {
                             turn.setBackgroundResource(R.drawable.o);
                             playerMode = 1;
                             matrixFlag[1][0] = 1;
-                        } else {
+
                             ComputerTurn();
                         }
                     }
@@ -146,7 +146,7 @@ public class PlayWithComputer extends Activity {
                             turn.setBackgroundResource(R.drawable.o);
                             playerMode = 1;
                             matrixFlag[1][1] = 1;
-                        } else {
+
                             ComputerTurn();
                         }
                     }
@@ -163,7 +163,7 @@ public class PlayWithComputer extends Activity {
                             turn.setBackgroundResource(R.drawable.o);
                             playerMode = 1;
                             matrixFlag[1][2] = 1;
-                        } else {
+
                             ComputerTurn();
                         }
                     }
@@ -180,7 +180,7 @@ public class PlayWithComputer extends Activity {
                             turn.setBackgroundResource(R.drawable.o);
                             playerMode = 1;
                             matrixFlag[2][0] = 1;
-                        } else {
+
                             ComputerTurn();
                         }
                     }
@@ -197,7 +197,7 @@ public class PlayWithComputer extends Activity {
                             turn.setBackgroundResource(R.drawable.o);
                             playerMode = 1;
                             matrixFlag[2][1] = 1;
-                        } else {
+
                             ComputerTurn();
                         }
                     }
@@ -214,7 +214,7 @@ public class PlayWithComputer extends Activity {
                             turn.setBackgroundResource(R.drawable.o);
                             playerMode = 1;
                             matrixFlag[2][2] = 1;
-                        } else {
+
                             ComputerTurn();
                         }
                     }
@@ -364,16 +364,63 @@ public class PlayWithComputer extends Activity {
 
     public void ComputerTurn() {
 
-        do {
-            x = RANDOM.nextInt(2);
-            y = RANDOM.nextInt(2);
-        } while ( matrixFlag[x][y] != 0 );
-       // if(matrixFlag[x][y] != 0 && matrixFlag[x][y] != 1 &&  matrixFlag[x][y] != 2) {
-            imageViews[x][y].setBackgroundResource(R.drawable.o);
-            turn.setBackgroundResource(R.drawable.x);
-            playerMode = 0;
-            matrixFlag[x][y] = 2;
+        if (playerMode == 1) {
+//            do {
+//                x = RANDOM.nextInt(2);
+//                y = RANDOM.nextInt(2);
+//            } while (matrixFlag[x][y] != 0);
+//            // if(matrixFlag[x][y] != 0 && matrixFlag[x][y] != 1 &&  matrixFlag[x][y] != 2) {
+//
+            int[] index = getPossibleIndex();
+            if(index.length > 0) {
+                x = index[0];
+                y = index[1];
+                imageViews[x][y].setBackgroundResource(R.drawable.o);
+                turn.setBackgroundResource(R.drawable.x);
+                playerMode = 0;
+                matrixFlag[x][y] = 2;
+
+            }
+            else{
+                return;
+            }
+        }
 
     }
+    public int[] getPossibleIndex(){
+        ArrayList<int[]> indices = new ArrayList<int[]>();
+        int[] index = new int[0];
+//Find indices of element with 0 value
+        for (int i = 0; i < matrixFlag.length; i++)
+        {
+            for (int j = 0; j < matrixFlag[i].length; j++)
+            {
+                if (matrixFlag[i][j] == 0)
+                {
+                    indices.add(new int[] { i, j });
+                }
+            }
+        }
 
+
+
+//Select a random index and print the result
+        if(indices.size()>0) {
+            Random rand = new Random();
+            int ri = rand.nextInt(indices.size());
+            index = indices.get(ri);
+
+
+        }
+        return index;
+    }
+    public void makeDelay(){
+        try {
+
+
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
