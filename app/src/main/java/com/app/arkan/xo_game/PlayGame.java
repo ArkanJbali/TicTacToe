@@ -80,6 +80,9 @@ public class PlayGame extends Activity {
                         }
                     }}else GameEnded();
                     counter++;
+                    if(CheckEnd()){
+                        GameEnded();
+                    }
                     break;
                 }
                 case R.id.btn_2: {
@@ -99,6 +102,9 @@ public class PlayGame extends Activity {
                         }
                     }}else GameEnded();
                     counter++;
+                    if(CheckEnd()){
+                        GameEnded();
+                    }
                     break;
                 }
                 case R.id.btn_3: {
@@ -118,6 +124,9 @@ public class PlayGame extends Activity {
                         }
                     }}else GameEnded();
                     counter++;
+                    if(CheckEnd()){
+                        GameEnded();
+                    }
                     break;
                 }
                 case R.id.btn_4: {
@@ -137,6 +146,9 @@ public class PlayGame extends Activity {
                         }
                     }}else GameEnded();
                     counter++;
+                    if(CheckEnd()){
+                        GameEnded();
+                    }
                     break;
                 }
                 case R.id.btn_5: {
@@ -156,6 +168,9 @@ public class PlayGame extends Activity {
                         }
                     }}else GameEnded();
                     counter++;
+                    if(CheckEnd()){
+                        GameEnded();
+                    }
                     break;
                 }
                 case R.id.btn_6: {
@@ -175,6 +190,9 @@ public class PlayGame extends Activity {
                         }
                     }}else GameEnded();
                     counter++;
+                    if(CheckEnd()){
+                        GameEnded();
+                    }
                     break;
                 }
                 case R.id.btn_7: {
@@ -194,6 +212,9 @@ public class PlayGame extends Activity {
                         }
                     }}else GameEnded();
                     counter++;
+                    if(CheckEnd()){
+                        GameEnded();
+                    }
                     break;
                 }
                 case R.id.btn_8: {
@@ -213,6 +234,9 @@ public class PlayGame extends Activity {
                         }
                     }}else GameEnded();
                     counter++;
+                    if(CheckEnd()){
+                        GameEnded();
+                    }
                     break;
                 }
                 case R.id.btn_9: {
@@ -232,6 +256,9 @@ public class PlayGame extends Activity {
                         }
                     }}else GameEnded();
                     counter++;
+                   if(CheckEnd()){
+                       GameEnded();
+                   }
                     break;
                 }
             }

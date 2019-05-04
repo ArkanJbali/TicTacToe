@@ -84,6 +84,9 @@ public class PlayWithComputer extends Activity {
                     }
                 } else GameEnded();
                 counter++;
+                if(CheckEnd()){
+                    GameEnded();
+                }
                 break;
             }
             case R.id.btn_2: {
@@ -101,6 +104,9 @@ public class PlayWithComputer extends Activity {
                     }
                 } else GameEnded();
                 counter++;
+                if(CheckEnd()){
+                    GameEnded();
+                }
                 break;
             }
             case R.id.btn_3: {
@@ -118,6 +124,9 @@ public class PlayWithComputer extends Activity {
                     }
                 } else GameEnded();
                 counter++;
+                if(CheckEnd()){
+                    GameEnded();
+                }
                 break;
             }
             case R.id.btn_4: {
@@ -135,6 +144,9 @@ public class PlayWithComputer extends Activity {
                     }
                 } else GameEnded();
                 counter++;
+                if(CheckEnd()){
+                    GameEnded();
+                }
                 break;
             }
             case R.id.btn_5: {
@@ -152,6 +164,9 @@ public class PlayWithComputer extends Activity {
                     }
                 } else GameEnded();
                 counter++;
+                if(CheckEnd()){
+                    GameEnded();
+                }
                 break;
             }
             case R.id.btn_6: {
@@ -169,6 +184,9 @@ public class PlayWithComputer extends Activity {
                     }
                 } else GameEnded();
                 counter++;
+                if(CheckEnd()){
+                    GameEnded();
+                }
                 break;
             }
             case R.id.btn_7: {
@@ -186,6 +204,9 @@ public class PlayWithComputer extends Activity {
                     }
                 } else GameEnded();
                 counter++;
+                if(CheckEnd()){
+                    GameEnded();
+                }
                 break;
             }
             case R.id.btn_8: {
@@ -203,6 +224,9 @@ public class PlayWithComputer extends Activity {
                     }
                 } else GameEnded();
                 counter++;
+                if(CheckEnd()){
+                    GameEnded();
+                }
                 break;
             }
             case R.id.btn_9: {
@@ -220,6 +244,9 @@ public class PlayWithComputer extends Activity {
                     }
                 } else GameEnded();
                 counter++;
+                if(CheckEnd()){
+                    GameEnded();
+                }
                 break;
             }
         }

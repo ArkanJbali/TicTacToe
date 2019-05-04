@@ -50,15 +50,17 @@ public class Score extends Activity {
 //add players name
 
             TextView date = findViewById(R.id.date);
-            date.setText(gameScore[0] + " " + gameScore[1]);
-            TextView xwin = findViewById(R.id.xwin);
-            xwin.setText(gameScore[3]);
-            TextView xloss = findViewById(R.id.xloss);
-            xloss.setText(gameScore[4]);
-            TextView owin = findViewById(R.id.owin);
-            owin.setText(gameScore[6]);
-            TextView oloss = findViewById(R.id.oloss);
-            oloss.setText(gameScore[7]);
+            if(!gameScore[0].equals("") && !gameScore[1].equals("") ) {
+                date.setText(gameScore[0] + " " + gameScore[1]);
+                TextView xwin = findViewById(R.id.xwin);
+                xwin.setText(gameScore[3]);
+                TextView xloss = findViewById(R.id.xloss);
+                xloss.setText(gameScore[4]);
+                TextView owin = findViewById(R.id.owin);
+                owin.setText(gameScore[6]);
+                TextView oloss = findViewById(R.id.oloss);
+                oloss.setText(gameScore[7]);
+            }
             StartActivity.ACTIVITY_SCORE=1;
         }
     }
